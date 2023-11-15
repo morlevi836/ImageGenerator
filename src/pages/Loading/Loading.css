@@ -1,0 +1,11 @@
+.Loading__Flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+}
+
+.Loading__Img {
+  width: 8rem;
+  height: 8rem;
+}
