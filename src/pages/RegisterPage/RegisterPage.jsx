@@ -75,9 +75,9 @@ function RegisterPage() {
         />
         <input
           className="inputPassword"
-          type="Password"
+          type="password"
           id="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={handleChange}
           onFocus={handleFocus}
         />

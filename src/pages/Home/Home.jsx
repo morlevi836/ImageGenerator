@@ -10,18 +10,16 @@ import Dashboard from "./../Dashboard/Dashboard";
 
 function Home() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Dashboard />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/favorite" element={<FavoritePage />} />
-        </Route>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Dashboard />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/favorite" element={<FavoritePage />} />
+      </Route>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
   );
 }
 export default Home;
