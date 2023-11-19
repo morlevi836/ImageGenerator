@@ -17,14 +17,14 @@ function FavoritePage() {
 
   function setSavedImg() {
     return (
-      <div className="Grid__Img">
+      <div className="Favorite__Flex__Img">
         {savedImages.map((img) => {
           return (
-            <div key={img.id} className="Api__Frame">
+            <div key={img.id} className="Favorite__Api__Frame">
               <img className="Api__Img" src={img.url} alt={img.description} />
-              <h3 className="Api__Description">{img.description}</h3>
+              <h3 className="Favorite__Api__Description">{img.description}</h3>
               <img
-                className="Save__Img"
+                className="Favorite__Save__Img"
                 src={"after_saving.png"}
                 alt="after_saving"
                 draggable="false"

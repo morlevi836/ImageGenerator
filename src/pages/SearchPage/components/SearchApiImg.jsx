@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { PropTypes } from "prop-types";
+import HoverImg from "./HoverImg";
 
 function SearchApiImg({ images }) {
+  const [isHovered, setIsHovered] = useState("");
   const [savedImages, setSavedImages] = useState(() => {
     return JSON.parse(localStorage.getItem("saved_img") || "[]");
   });
@@ -28,28 +30,33 @@ function SearchApiImg({ images }) {
   }
 
   return (
-    <div className="Grid__Img">
+    <div className="Flex__Img">
       {images.map((img) => {
         const imageExists = savedImages.find(
           (savedImg) => savedImg.id === img.id
         );
         return (
-          <div key={img.id} className="Api__Frame">
+          <div
+            key={img.id}
+            className="Api__Frame"
+            onMouseEnter={() => setIsHovered(img.id)}
+            onMouseLeave={() => setIsHovered("")}
+          >
             <img
               className="Api__Img"
               src={img.urls.small}
               alt={img.alt_description}
+              style={{ opacity: isHovered === img.id ? 0.3 : 1 }}
             />
-            <h3 className="Api__Description">{img.alt_description}</h3>
-            <img
-              className="Save__Img"
-              src={imageExists ? "after_saving.png" : "before_saving.png"}
-              alt="saveImg"
-              draggable="false"
-              onClick={() =>
-                setLocalStorage(img.id, img.urls.small, img.alt_description)
-              }
-            />
+            {isHovered === img.id && (
+              <HoverImg
+                imageExists={imageExists}
+                setLocalStorage={setLocalStorage}
+                img_id={img.id}
+                img_url={img.urls.small}
+                img_description={img.alt_description}
+              />
+            )}
           </div>
         );
       })}

@@ -7,6 +7,7 @@ function SearchBox({ setValue, setOrder }) {
   function handleClickOrder(event) {
     const value = event.target.innerHTML;
     setOrder(value);
+    setIsMenuOpen(false);
   }
 
   return (
@@ -49,9 +50,9 @@ function SearchBox({ setValue, setOrder }) {
   );
 }
 
-SearchBox.propType = {
-  setValue: PropTypes.func.isRequired,
-  setOrder: PropTypes.func.isRequired,
+SearchBox.propTypes = {
+  setValue: PropTypes.func,
+  setOrder: PropTypes.func,
 };
 
 export default SearchBox;
