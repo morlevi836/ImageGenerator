@@ -47,26 +47,26 @@ function Dashboard() {
         </div>
       </header>
 
-      <nav>
-        <ul className="nav__ul">
-          <li className="nav__li">
-            <NavLink to="/" className="nav__Link" activeClassName="active">
+      <nav className="Nav">
+        <ul className="Nav__ul">
+          <li className="Nav__li">
+            <NavLink to="/" className="Nav__Link" activeClassName="active">
               Home
             </NavLink>
           </li>
-          <li className="nav__li">
+          <li className="Nav__li">
             <NavLink
               to="/search"
-              className="nav__Link"
+              className="Nav__Link"
               activeClassName="active"
             >
               Search
             </NavLink>
           </li>
-          <li className="nav__li">
+          <li className="Nav__li">
             <NavLink
               to="/favorite"
-              className="nav__Link"
+              className="Nav__Link"
               activeClassName="active"
             >
               favorite

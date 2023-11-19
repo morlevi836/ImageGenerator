@@ -61,7 +61,13 @@ header {
   cursor: pointer;
 }
 
-.nav__ul {
+.Nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.Nav__ul {
   list-style-type: none;
   margin: 0px;
   padding: 1rem 0rem;
@@ -71,14 +77,14 @@ header {
   background-color: rgb(2, 242, 242);
 }
 
-.nav__Link {
+.Nav__Link {
   text-decoration: none;
   color: black;
   font-size: 1.3rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav__Link:hover {
+.Nav__Link:hover {
   text-decoration-line: underline;
 }
 
