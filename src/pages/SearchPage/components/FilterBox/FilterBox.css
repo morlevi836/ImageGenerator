@@ -24,7 +24,7 @@
   cursor: pointer;
   padding: 0.2rem 0.4rem;
   border: 0.1rem solid #76b6e0;
-  width: 5rem;
+  width: fit-content;
   border-radius: 3.5rem;
 }
 
