@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
+import "./FilterBox.css";
 
-function FilterBox({ setNumPage, setContentFilter, setColor }) {
+function FilterBox({ numPage, setNumPage, setContentFilter, setColor }) {
   const colors = [
     "black_and_white",
     "black",
@@ -35,38 +36,35 @@ function FilterBox({ setNumPage, setContentFilter, setColor }) {
       <div className="Filter__Div">
         <label className="Filter__Label">Image Per Page:</label>
         <input
-          className="Filter__Input"
+          className="Filter__Bar"
           type="number"
-          min="1"
+          min="0"
           max="30"
           id="Filter__ImagePerPage"
+          value={numPage}
           onChange={handleChange}
         />
       </div>
       <div className="Filter__Div">
         <label className="Filter__Label">Content Filter:</label>
         <select
-          className="Filter__Select"
+          className="Filter__Bar"
           id="Filter__ContentFilter"
           onChange={handleChange}
         >
-          <option className="Filter__Option">low</option>
-          <option className="Filter__Option">high</option>
+          <option>low</option>
+          <option>high</option>
         </select>
       </div>
       <div className="Filter__Div">
         <label className="Filter__Label">Color:</label>
         <select
-          className="Filter__Select"
+          className="Filter__Bar"
           id="Filter__Color"
           onChange={handleChange}
         >
           {colors.map((color, index) => {
-            return (
-              <option key={index} className="Filter__Option">
-                {color}
-              </option>
-            );
+            return <option key={index}>{color}</option>;
           })}
         </select>
       </div>
@@ -75,6 +73,7 @@ function FilterBox({ setNumPage, setContentFilter, setColor }) {
 }
 
 FilterBox.propTypes = {
+  numPage: PropTypes.string,
   setNumPage: PropTypes.func.isRequired,
   setContentFilter: PropTypes.func.isRequired,
   setColor: PropTypes.func.isRequired,

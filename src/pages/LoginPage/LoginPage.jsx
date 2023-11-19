@@ -24,7 +24,12 @@ function LoginPage() {
         users[userValue].email === user.email &&
         users[userValue].password === user.password
       ) {
-        navigate("/");
+        navigate("/", {
+          state: {
+            first_name: users[userValue].first_name,
+            last_name: users[userValue].last_name,
+          },
+        });
         return;
       }
     }

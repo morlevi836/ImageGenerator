@@ -1,7 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const location = useLocation();
+  const { state } = location;
+
+  const { first_name, last_name } = state || {};
+
   return (
     <>
       <header>
@@ -14,7 +19,7 @@ function Dashboard() {
           />
         </NavLink>
         <h1 className="header__Title">Image Generator</h1>
-        <div>
+        <div className="header__Login">
           <button className="header__Button">
             <NavLink to="/login" className="nav__Link">
               login
@@ -25,6 +30,7 @@ function Dashboard() {
           </NavLink>
         </div>
       </header>
+
       <nav>
         <ul className="nav__ul">
           <li className="nav__li">

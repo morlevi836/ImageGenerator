@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { PropTypes } from "prop-types";
-import HoverImg from "./HoverImg";
+import HoverImg from "../HoverImg/HoverImg";
+import "./SearchApiImg.css";
 
 function SearchApiImg({ images }) {
+  const [isClicked, setIsClicked] = useState();
   const [isHovered, setIsHovered] = useState("");
   const [savedImages, setSavedImages] = useState(() => {
     return JSON.parse(localStorage.getItem("saved_img") || "[]");
@@ -30,7 +32,7 @@ function SearchApiImg({ images }) {
   }
 
   return (
-    <div className="Flex__Img">
+    <div className="Api__Flex__Img">
       {images.map((img) => {
         const imageExists = savedImages.find(
           (savedImg) => savedImg.id === img.id
@@ -43,10 +45,11 @@ function SearchApiImg({ images }) {
             onMouseLeave={() => setIsHovered("")}
           >
             <img
-              className="Api__Img"
+              className={isHovered === img.id ? "Api__Img__Hover" : "Api__Img"}
               src={img.urls.small}
               alt={img.alt_description}
-              style={{ opacity: isHovered === img.id ? 0.3 : 1 }}
+              draggable="false"
+              onClick={() => setIsClicked(true)}
             />
             {isHovered === img.id && (
               <HoverImg
@@ -55,6 +58,8 @@ function SearchApiImg({ images }) {
                 img_id={img.id}
                 img_url={img.urls.small}
                 img_description={img.alt_description}
+                isClicked={isClicked}
+                setIsClicked={setIsClicked}
               />
             )}
           </div>

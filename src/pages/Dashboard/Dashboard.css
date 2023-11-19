@@ -67,3 +67,15 @@ header {
 .active {
   text-decoration-line: underline;
 }
+
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  .header__Title {
+    margin-left: 0;
+  }
+  .header__Login {
+    margin-top: 1rem;
+  }
+}

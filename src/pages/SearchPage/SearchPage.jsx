@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./SearchPage.css";
-import SearchBox from "./components/SearchBox";
-import FilterBox from "./components/FilterBox";
-import SearchApiImg from "./components/SearchApiImg";
+import SearchBox from "./components/SearchBox/SearchBox";
+import FilterBox from "./components/FilterBox/FilterBox";
+import SearchApiImg from "./components/SearchApiImg/SearchApiImg";
 import Loading from "../Loading/Loading";
 
 function SearchPage() {
@@ -10,7 +10,7 @@ function SearchPage() {
   const [order, setOrder] = useState("relevant");
   const [images, setImages] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [numPage, setNumPage] = useState("9");
+  const [numPage, setNumPage] = useState("10");
   const [contentFilter, setContentFilter] = useState("low");
   const [color, setColor] = useState("white");
 
@@ -37,6 +37,7 @@ function SearchPage() {
     <>
       <SearchBox setValue={setValue} setOrder={setOrder} />
       <FilterBox
+        numPage={numPage}
         setNumPage={setNumPage}
         setContentFilter={setContentFilter}
         setColor={setColor}

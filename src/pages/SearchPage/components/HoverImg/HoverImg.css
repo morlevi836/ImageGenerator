@@ -1,0 +1,24 @@
+.Hover__Description {
+  width: 18rem;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 3rem;
+}
+
+.Hover__Bar__Img {
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  bottom: 1rem;
+}
+
+.Bar__Img {
+  width: 2rem;
+  height: 2rem;
+  bottom: 1rem;
+  cursor: pointer;
+}

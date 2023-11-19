@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
+import "./SearchBox.css";
 
 function SearchBox({ setValue, setOrder }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,25 +28,27 @@ function SearchBox({ setValue, setOrder }) {
         alt="SearchIcon"
         draggable="false"
       />
-      <img
-        className="Sort__Img"
-        src="Sort-By.png"
-        alt="Sort-By"
-        draggable="false"
-        onClick={() =>
-          isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
-        }
-      />
-      {isMenuOpen && (
-        <ul className="Menu__ul">
-          <li className="Menu__li" onClick={handleClickOrder}>
-            latest
-          </li>
-          <li className="Menu__li" onClick={handleClickOrder}>
-            relevant
-          </li>
-        </ul>
-      )}
+      <div className="Sort__Container">
+        <img
+          className="Sort__Img"
+          src="Sort-By.png"
+          alt="Sort-By"
+          draggable="false"
+          onClick={() =>
+            isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
+          }
+        />
+        {isMenuOpen && (
+          <ul className="Menu__ul">
+            <li className="Menu__li" onClick={handleClickOrder}>
+              latest
+            </li>
+            <li className="Menu__li" onClick={handleClickOrder}>
+              relevant
+            </li>
+          </ul>
+        )}
+      </div>
     </div>
   );
 }
