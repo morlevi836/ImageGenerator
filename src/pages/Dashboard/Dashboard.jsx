@@ -1,11 +1,12 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./Dashboard.css";
+import { useState } from "react";
 
 function Dashboard() {
-  const location = useLocation();
-  const { state } = location;
+  let location = useLocation();
+  let { state } = location;
 
-  const { first_name, last_name } = state || {};
+  const [firstName, setFirstName] = useState(state?.first_name || "");
 
   return (
     <>
@@ -20,14 +21,29 @@ function Dashboard() {
         </NavLink>
         <h1 className="header__Title">Image Generator</h1>
         <div className="header__Login">
-          <button className="header__Button">
-            <NavLink to="/login" className="nav__Link">
-              login
-            </NavLink>
-          </button>
-          <NavLink to="/register" className="nav__Link">
-            register
-          </NavLink>
+          {firstName === "" ? (
+            <>
+              <button className="header__Button">
+                <NavLink to="/login" className="nav__Link">
+                  login
+                </NavLink>
+              </button>
+              <NavLink to="/register" className="nav__Link">
+                register
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <h1 className="Title__Name">Hello {firstName}</h1>
+              <img
+                className="LogOut__Logo"
+                src="logout.png"
+                alt="logout"
+                draggable="false"
+                onClick={() => setFirstName("")}
+              />
+            </>
+          )}
         </div>
       </header>
 
