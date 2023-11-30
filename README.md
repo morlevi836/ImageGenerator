@@ -1,10 +1,11 @@
-# React + Vite
+# Unsplash Image Generator - React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Welcome to the Unsplash Image Generator React App! This application allows you to seamlessly integrate high-quality images from the Unsplash API into your React projects. Unsplash provides a vast collection of stunning, royalty-free images that can enhance the visual appeal of your applications.
 
-Currently, two official plugins are available:
+## Features
+- Search Images: Easily search for images based on keywords or topics of your choice.
+- Dynamic Rendering: The app dynamically renders images based on the search query, providing a diverse set of results.
+- Responsive Design: Ensures a smooth and visually appealing experience on various devices and screen sizes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-https://image-generator-phi-three.vercel.app
+**Link to the website:** [ImageGeneragor](https://image-generator-phi-three.vercel.app) 
