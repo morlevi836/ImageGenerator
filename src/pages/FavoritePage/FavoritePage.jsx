@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./FavoritePage.css";
 import SearchApiImg from "../SearchPage/components/SearchApiImg/SearchApiImg";
+import "./FavoritePage.css";
 
 function FavoritePage() {
   const [savedImages, setSavedImages] = useState(() => {
