@@ -4,6 +4,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import FilterBox from "./components/FilterBox/FilterBox";
 import SearchApiImg from "./components/SearchApiImg/SearchApiImg";
 import Loading from "../Loading/Loading";
+// import { useLocation } from "react-router-dom";
 
 function SearchPage() {
   const [value, setValue] = useState("sky");
@@ -13,6 +14,11 @@ function SearchPage() {
   const [numPage, setNumPage] = useState("10");
   const [contentFilter, setContentFilter] = useState("low");
   const [color, setColor] = useState("white");
+  const [savedImages, setSavedImages] = useState(() => {
+    return JSON.parse(localStorage.getItem("saved_img") || "[]");
+  });
+
+  // const state = useLocation();
 
   useEffect(() => {
     const ACCESS_KEY = import.meta.env.VITE_API_KEY;
@@ -42,7 +48,24 @@ function SearchPage() {
         setContentFilter={setContentFilter}
         setColor={setColor}
       />
-      {isLoading ? <Loading /> : <SearchApiImg images={images} />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="Api__Flex__Img">
+          {images.map((img) => {
+            return (
+              <SearchApiImg
+                key={img.id}
+                img_id={img.id}
+                img_url={img.urls.small}
+                img_description={img.alt_description}
+                savedImages={savedImages}
+                setSavedImages={setSavedImages}
+              />
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }

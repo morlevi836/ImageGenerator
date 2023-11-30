@@ -50,25 +50,15 @@ function Dashboard() {
       <nav className="Nav">
         <ul className="Nav__ul">
           <li className="Nav__li">
-            <NavLink to="/" className="Nav__Link" activeClassName="active">
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li className="Nav__li">
-            <NavLink
-              to="/search"
-              className="Nav__Link"
-              activeClassName="active"
-            >
+            <NavLink to="/search" state="SearchPage">
               Search
             </NavLink>
           </li>
           <li className="Nav__li">
-            <NavLink
-              to="/favorite"
-              className="Nav__Link"
-              activeClassName="active"
-            >
+            <NavLink to="/favorite" state="FavoritePage">
               favorite
             </NavLink>
           </li>

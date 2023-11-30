@@ -77,14 +77,14 @@ header {
   background-color: rgb(2, 242, 242);
 }
 
-.Nav__Link {
+a {
   text-decoration: none;
   color: black;
   font-size: 1.3rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.Nav__Link:hover {
+a:hover {
   text-decoration-line: underline;
 }
 
