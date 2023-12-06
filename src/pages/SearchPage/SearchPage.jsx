@@ -17,8 +17,6 @@ function SearchPage() {
     return JSON.parse(localStorage.getItem("saved_img") || "[]");
   });
 
-  // const state = useLocation();
-
   useEffect(() => {
     const ACCESS_KEY = import.meta.env.VITE_API_KEY;
     const fetchImg = async () => {
