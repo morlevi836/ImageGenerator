@@ -4,7 +4,6 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import FilterBox from "./components/FilterBox/FilterBox";
 import SearchApiImg from "./components/SearchApiImg/SearchApiImg";
 import Loading from "../Loading/Loading";
-// import { useLocation } from "react-router-dom";
 
 function SearchPage() {
   const [value, setValue] = useState("sky");
