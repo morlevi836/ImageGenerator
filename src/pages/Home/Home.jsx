@@ -15,10 +15,10 @@ function Home() {
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorite" element={<FavoritePage />} />
+        <Route path="/*" element={<NotFound />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 }

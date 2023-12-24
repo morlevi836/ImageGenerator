@@ -21,8 +21,6 @@ function SearchApiImg({
   function setLocalStorage(id, url, description) {
     const imgObj = { id: id, url: url, description: description };
     const imageExists = savedImages.find((img) => img.id === id);
-    console.log(imageExists);
-    console.log(savedImages);
     if (savedImages === "") {
       setSavedImages([imgObj]);
     } else {
